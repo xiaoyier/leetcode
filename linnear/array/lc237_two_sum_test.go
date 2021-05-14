@@ -1,4 +1,4 @@
-package sum2
+package array
 
 import (
 	"encoding/json"
@@ -6,11 +6,11 @@ import (
 	"testing"
 )
 
-func TestSum2(t *testing.T) {
+func TestTwoSum(t *testing.T) {
 	num := []int{2, 8, 3, 4, 1, 0, 3, 6}
 	target := 11
 
-	result := sum2(num, target)
+	result := twoSum(num, target)
 	t.Log(result)
 	t.Logf("%v", result)
 
