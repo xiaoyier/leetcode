@@ -49,6 +49,7 @@ func scoreOfParentheses(s string) int {
 	return score
 }
 
+// ((()))((()()))  -> 12
 func scoreOfParenthese2(s string) int {
 
 	score := 0
