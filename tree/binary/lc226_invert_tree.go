@@ -52,8 +52,8 @@ func invertTree4(root *TreeNode) *TreeNode {
 	queue := make([]*TreeNode, 0)
 	queue = append(queue, root)
 	for len(queue) > 0 {
-		node := queue[len(queue)-1]
-		queue = queue[:len(queue)-1]
+		node := queue[0]
+		queue = queue[1:]
 		node.Left, node.Right = node.Right, node.Left
 
 		if node.Left != nil {
