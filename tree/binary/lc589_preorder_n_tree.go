@@ -5,7 +5,7 @@ package binary
 //
 //N 叉树 在输入中按层序遍历进行序列化表示，每组子节点由空值 null 分隔（请参见示例）。
 
-https://leetcode-cn.com/problems/n-ary-tree-preorder-traversal/
+// https://leetcode-cn.com/problems/n-ary-tree-preorder-traversal/
 
 type Node struct {
 	Val int
@@ -27,5 +27,4 @@ func preorder(root *Node) []int {
 	}
 	dfs(root)
 	return vals
-
 }
