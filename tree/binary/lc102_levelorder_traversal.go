@@ -11,7 +11,7 @@ func levelOrder(root *TreeNode) [][]int {
 	q := []*TreeNode{root}
 	result := [][]int{}
 	level := []int{}
-	size := 0
+	size := 1
 	for len(q) > 0 {
 		node := q[0]
 		q = q[1:]
