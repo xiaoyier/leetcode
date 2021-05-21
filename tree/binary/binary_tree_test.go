@@ -94,9 +94,9 @@ func TestFlatten(t *testing.T) {
 }
 
 func TestBuildTree(t *testing.T) {
-	inorder := []int{1,2}
-	postorder := []int{2,1}
-	root := bt.BuildTree(inorder,postorder)
+	preorder := []int{3,9,20,15,7}
+	inorder := []int{9,3,15,20,7}
+	root := bt.BuildTree1(preorder,inorder)
 	FormatTree(root)
 }
 
