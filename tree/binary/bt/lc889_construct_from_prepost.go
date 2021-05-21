@@ -10,5 +10,38 @@ package bt
 // 输出：[1,2,3,4,5,6,7]
 
 func constructFromPrePost(pre []int, post []int) *TreeNode {
+	first := pre[0]
+	root := &TreeNode{Val: first}
+	if len(pre) == 1 {
+		return root
+	}
 
+	pre = pre[1:]
+	post = post[:len(post)-1]
+	left := pre[0]
+	right := post[len(post)-1]
+
+	if left == right {
+		//单子树
+		root.Left = constructFromPrePost(pre, post)
+	} else {
+		preIndex, postIndex := -1, -1
+		for i, v := range pre {
+			if v == right {
+				preIndex = i
+				break
+			}
+		}
+		for i, v := range post {
+			if v == left {
+				postIndex = i
+				break
+			}
+		}
+
+		//双子树
+		root.Left = constructFromPrePost(pre[:preIndex], post[:postIndex+1])
+		root.Right = constructFromPrePost(pre[preIndex:], post[postIndex+1:])
+	}
+	return root
 }
