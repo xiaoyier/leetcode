@@ -2,17 +2,18 @@ package binary
 
 import (
 	"fmt"
+	"leetcode/tree/binary/bt"
 	"testing"
 )
 
 func TestInverTree(t *testing.T) {
-	node4 := &TreeNode{Val: 4}
-	node2 := &TreeNode{Val: 2}
-	node7 := &TreeNode{Val: 7}
-	node1 := &TreeNode{Val: 1}
-	node3 := &TreeNode{Val: 3}
-	node6 := &TreeNode{Val: 6}
-	node9 := &TreeNode{Val: 9}
+	node4 := &bt.TreeNode{Val: 4}
+	node2 := &bt.TreeNode{Val: 2}
+	node7 := &bt.TreeNode{Val: 7}
+	node1 := &bt.TreeNode{Val: 1}
+	node3 := &bt.TreeNode{Val: 3}
+	node6 := &bt.TreeNode{Val: 6}
+	node9 := &bt.TreeNode{Val: 9}
 	node4.Left = node2
 	node4.Right = node7
 	node2.Left = node1
@@ -27,11 +28,11 @@ func TestInverTree(t *testing.T) {
 func TestDeleteNode(t *testing.T) {
 
 	//node5 := &TreeNode{Val: 5}
-	node3 := &TreeNode{Val: 3}
+	node3 := &bt.TreeNode{Val: 3}
 	//node6 := &TreeNode{Val: 6}
-	node2 := &TreeNode{Val: 2}
-	node4 := &TreeNode{Val: 4}
-	node1 := &TreeNode{Val: 1}
+	node2 := &bt.TreeNode{Val: 2}
+	node4 := &bt.TreeNode{Val: 4}
+	node1 := &bt.TreeNode{Val: 1}
 	//node7 := &TreeNode{Val: 7}
 	//node5.Left = node3
 	//node5.Right = node6
@@ -49,7 +50,7 @@ func TestDeleteNode(t *testing.T) {
 }
 
 
-func FormatTree(root *TreeNode) {
+func FormatTree(root *bt.TreeNode) {
 	if root == nil {
 		return
 	}
@@ -71,5 +72,25 @@ func TestPostOrder(t *testing.T) {
 	//fmt.Println(result)
 }
 
+
+func TestFlatten(t *testing.T) {
+
+	node1 := &bt.TreeNode{Val: 1}
+	node2 := &bt.TreeNode{Val: 2}
+	node3 := &bt.TreeNode{Val: 3}
+	node4 := &bt.TreeNode{Val: 4}
+	node5 := &bt.TreeNode{Val: 5}
+	node6 := &bt.TreeNode{Val: 6}
+	node1.Left = node2
+	node1.Right = node5
+	node2.Left = node3
+	node2.Right = node4
+	node5.Right = node6
+
+	bt.Flatten(node1)
+	//bt.invertTree(node4)
+
+	FormatTree(node1)
+}
 
 

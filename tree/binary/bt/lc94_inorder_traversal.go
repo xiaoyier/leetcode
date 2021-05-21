@@ -1,16 +1,14 @@
 package bt
 
-import "leetcode/tree/binary"
-
 // 给定一个二叉树的根节点 root ，返回它的 中序 遍历。
 
 // https://leetcode-cn.com/problems/binary-tree-inorder-traversal/
 
 
 // 迭代
-func inorderTraversal(root *binary.TreeNode) []int {
+func inorderTraversal(root *TreeNode) []int {
 	result := []int{}
-	stack := []*binary.TreeNode{}
+	stack := []*TreeNode{}
 	for len(stack) > 0 || root != nil {
 		for root != nil {
 			stack = append(stack, root)
@@ -26,10 +24,10 @@ func inorderTraversal(root *binary.TreeNode) []int {
 
 
 // 递归
-func inorderTraversal1(root *binary.TreeNode) []int {
+func inorderTraversal1(root *TreeNode) []int {
 	result := []int{}
-	var dfs func(node *binary.TreeNode)
-	dfs = func(node *binary.TreeNode) {
+	var dfs func(node *TreeNode)
+	dfs = func(node *TreeNode) {
 		if node == nil {
 			return
 		}

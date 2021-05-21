@@ -1,15 +1,13 @@
 package bt
 
-import "leetcode/tree/binary"
-
 // 给你二叉树的根节点 root ，返回它节点值的 前序 遍历。
 
 // https://leetcode-cn.com/problems/binary-tree-preorder-traversal/
 
 
 // 迭代
-func preorderTraversal(root *binary.TreeNode) []int {
-	stack := []*binary.TreeNode{}
+func preorderTraversal(root *TreeNode) []int {
+	stack := []*TreeNode{}
 	result := []int{}
 	for len(stack) > 0 || root != nil {
 		for root != nil {
@@ -31,10 +29,10 @@ func preorderTraversal(root *binary.TreeNode) []int {
 
 
 // 递归
-func preorderTraversal1(root *binary.TreeNode) []int {
+func preorderTraversal1(root *TreeNode) []int {
 	var vals = []int{}
-	var dfs func(*binary.TreeNode)
-	dfs = func (node *binary.TreeNode) {
+	var dfs func(*TreeNode)
+	dfs = func (node *TreeNode) {
 		if node == nil {
 			return
 		}

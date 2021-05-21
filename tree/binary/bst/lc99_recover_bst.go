@@ -1,6 +1,8 @@
 package bst
 
-import "leetcode/tree/binary"
+import (
+	"leetcode/tree/binary/bt"
+)
 
 //给你二叉搜索树的根节点 root ，该树中的两个节点被错误地交换。请在不改变其结构的情况下，恢复这棵树。
 //
@@ -8,10 +10,10 @@ import "leetcode/tree/binary"
 
 // https://leetcode-cn.com/problems/recover-binary-search-tree/
 
-func recoverTree(root *binary.TreeNode)  {
-	var node1, node2 *binary.TreeNode
+func recoverTree(root *bt.TreeNode)  {
+	var node1, node2 *bt.TreeNode
 	preNode := root
-	stack := []*binary.TreeNode{}
+	stack := []*bt.TreeNode{}
 	for len(stack) > 0 || root != nil {
 		for root != nil {
 			stack = append(stack, root)

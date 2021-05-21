@@ -1,4 +1,4 @@
-package binary
+package bt
 
 
 // Definition for a binary tree node.

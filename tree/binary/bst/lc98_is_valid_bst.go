@@ -1,6 +1,8 @@
 package bst
 
-import "leetcode/tree/binary"
+import (
+	"leetcode/tree/binary/bt"
+)
 
 // 给定一个二叉树，判断其是否是一个有效的二叉搜索树。
 
@@ -12,9 +14,9 @@ import "leetcode/tree/binary"
 
 // https://leetcode-cn.com/problems/validate-binary-search-tree/
 
-func isValidBST1(root *binary.TreeNode) bool {
+func isValidBST1(root *bt.TreeNode) bool {
 
-	stack := []*binary.TreeNode{}
+	stack := []*bt.TreeNode{}
 	inOrder := -1 << 63
 
 	for len(stack) > 0 || root != nil {
@@ -36,7 +38,7 @@ func isValidBST1(root *binary.TreeNode) bool {
 }
 
 var pre = -1 << 63
-func isValidBST(root *binary.TreeNode) bool {
+func isValidBST(root *bt.TreeNode) bool {
 	if root == nil {
 		return true
 	}
@@ -52,10 +54,10 @@ func isValidBST(root *binary.TreeNode) bool {
 	return isValidBST(root.Right)
 }
 
-func isValidBST2(root *binary.TreeNode) bool {
+func isValidBST2(root *bt.TreeNode) bool {
 
-	nodes := make([]*binary.TreeNode, 0)
-	inOrder(root, func(node *binary.TreeNode) {
+	nodes := make([]*bt.TreeNode, 0)
+	inOrder(root, func(node *bt.TreeNode) {
 		nodes = append(nodes, node)
 	})
 
@@ -70,7 +72,7 @@ func isValidBST2(root *binary.TreeNode) bool {
 	return true
 }
 
-func inOrder(root *binary.TreeNode, it func(node *binary.TreeNode)) {
+func inOrder(root *bt.TreeNode, it func(node *bt.TreeNode)) {
 	if root == nil {
 		return
 	}

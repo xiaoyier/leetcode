@@ -1,13 +1,15 @@
 package bst
 
-import "leetcode/tree/binary"
+import (
+	"leetcode/tree/binary/bt"
+)
 
 // 给定二叉搜索树的根结点 root，返回值位于范围 [low, high] 之间的所有结点的值的和。
 
 // https://leetcode-cn.com/problems/range-sum-of-bst/
 
-func rangeSumBST(root *binary.TreeNode, low int, high int) int {
-	queue := []*binary.TreeNode{root}
+func rangeSumBST(root *bt.TreeNode, low int, high int) int {
+	queue := []*bt.TreeNode{root}
 	sum := 0
 	for len(queue) > 0 {
 		node := queue[0]
@@ -27,10 +29,10 @@ func rangeSumBST(root *binary.TreeNode, low int, high int) int {
 	return sum
 }
 
-func rangeSumBST1(root *binary.TreeNode, low int, high int) int {
+func rangeSumBST1(root *bt.TreeNode, low int, high int) int {
 	sum := 0
-	var rangeFunc func(node *binary.TreeNode)
-	rangeFunc = func(node *binary.TreeNode) {
+	var rangeFunc func(node *bt.TreeNode)
+	rangeFunc = func(node *bt.TreeNode) {
 		if node == nil {
 			return
 		}

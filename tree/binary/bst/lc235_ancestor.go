@@ -1,6 +1,8 @@
 package bst
 
-import "leetcode/tree/binary"
+import (
+	"leetcode/tree/binary/bt"
+)
 
 // 给定一个二叉搜索树, 找到该树中两个指定节点的最近公共祖先。
 //
@@ -8,7 +10,7 @@ import "leetcode/tree/binary"
 
 // https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-search-tree/
 
-func lowestCommonAncestor(root, p, q *binary.TreeNode) *binary.TreeNode {
+func lowestCommonAncestor(root, p, q *bt.TreeNode) *bt.TreeNode {
 	node := root
 	for node != nil {
 		if node.Val > p.Val && node.Val > q.Val {
