@@ -1,4 +1,4 @@
-package binary
+package n
 
 // 给定一个 N 叉树，找到其最大深度。
 //

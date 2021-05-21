@@ -1,13 +1,15 @@
-package binary
+package bst
+
+import "leetcode/tree/binary"
 
 // 给你一个二叉搜索树的根节点 root ，返回 树中任意两不同节点值之间的最小差值 。
 
 // https://leetcode-cn.com/problems/minimum-distance-between-bst-nodes/
 
-func minDiffInBST(root *TreeNode) int {
+func minDiffInBST(root *binary.TreeNode) int {
 	diff := 1 << 63 - 1
 	pre := -1
-	stack := []*TreeNode{}
+	stack := []*binary.TreeNode{}
 	for len(stack) > 0 || root != nil {
 		for root != nil {
 			stack = append(stack, root)

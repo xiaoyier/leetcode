@@ -1,14 +1,16 @@
-package binary
+package bt
+
+import "leetcode/tree/binary"
 
 // 翻转一棵二叉树。
 
 // https://leetcode-cn.com/problems/invert-binary-tree/
 
-func invertTree(root *TreeNode) *TreeNode {
+func invertTree(root *binary.TreeNode) *binary.TreeNode {
 	return invertTree4(root)
 }
 
-func invertTree1(root *TreeNode) *TreeNode {
+func invertTree1(root *binary.TreeNode) *binary.TreeNode {
 	if root == nil {
 		return nil
 	}
@@ -21,7 +23,7 @@ func invertTree1(root *TreeNode) *TreeNode {
 }
 
 
-func invertTree2(root *TreeNode) *TreeNode {
+func invertTree2(root *binary.TreeNode) *binary.TreeNode {
 	if root == nil {
 		return nil
 	}
@@ -34,7 +36,7 @@ func invertTree2(root *TreeNode) *TreeNode {
 }
 
 
-func invertTree3(root *TreeNode) *TreeNode {
+func invertTree3(root *binary.TreeNode) *binary.TreeNode {
 	if root == nil {
 		return nil
 	}
@@ -47,9 +49,9 @@ func invertTree3(root *TreeNode) *TreeNode {
 }
 
 
-func invertTree4(root *TreeNode) *TreeNode {
+func invertTree4(root *binary.TreeNode) *binary.TreeNode {
 
-	queue := make([]*TreeNode, 0)
+	queue := make([]*binary.TreeNode, 0)
 	queue = append(queue, root)
 	for len(queue) > 0 {
 		node := queue[0]

@@ -1,14 +1,16 @@
-package binary
+package bt
+
+import "leetcode/tree/binary"
 
 // 给你一个二叉树，请你返回其按 层序遍历 得到的节点值。 （即逐层地，从左到右访问所有节点）。
 
 // https://leetcode-cn.com/problems/binary-tree-level-order-traversal/
 
-func levelOrder(root *TreeNode) [][]int {
+func levelOrder(root *binary.TreeNode) [][]int {
 	if root == nil {
 		return nil
 	}
-	q := []*TreeNode{root}
+	q := []*binary.TreeNode{root}
 	result := [][]int{}
 	level := []int{}
 	size := 1

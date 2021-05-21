@@ -1,4 +1,4 @@
-package binary
+package n
 
 
 // 给定一个 N 叉树，返回其节点值的 前序遍历 。
@@ -7,10 +7,7 @@ package binary
 
 // https://leetcode-cn.com/problems/n-ary-tree-preorder-traversal/
 
-type Node struct {
-	Val int
-	Children []*Node
-}
+
 
 func preorder(root *Node) []int {
 

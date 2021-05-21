@@ -19,7 +19,7 @@ func TestInverTree(t *testing.T) {
 	node2.Right = node3
 	node7.Left = node6
 	node7.Right = node9
-	invertTree(node4)
+	//bt.invertTree(node4)
 
 	FormatTree(node4)
 }
@@ -44,8 +44,8 @@ func TestDeleteNode(t *testing.T) {
 	FormatTree(node3)
 	fmt.Println()
 
-	node := deleteNode(node3, 1)
-	FormatTree(node)
+	//node := bst.deleteNode(node3, 1)
+	//FormatTree(node)
 }
 
 
@@ -61,14 +61,14 @@ func FormatTree(root *TreeNode) {
 
 func TestPostOrder(t *testing.T) {
 
-	node5 := &Node{Val: 5}
-	node6 := &Node{Val: 6}
-	node3 := &Node{Val: 3, Children: []*Node{node5,node6}}
-	node2 := &Node{Val: 2}
-	node4 := &Node{Val: 4}
-	node1 := &Node{Val: 1, Children: []*Node{node3,node2,node4}}
-	result := postorder(node1)
-	fmt.Println(result)
+	//node5 := &n.Node{Val: 5}
+	//node6 := &n.Node{Val: 6}
+	//node3 := &n.Node{Val: 3, Children: []*n.Node{node5,node6}}
+	//node2 := &n.Node{Val: 2}
+	//node4 := &n.Node{Val: 4}
+	//node1 := &n.Node{Val: 1, Children: []*n.Node{node3,node2,node4}}
+	//result := n.postorder(node1)
+	//fmt.Println(result)
 }
 
 

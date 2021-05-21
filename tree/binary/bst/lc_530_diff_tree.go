@@ -1,15 +1,16 @@
-package binary
+package bst
 
+import "leetcode/tree/binary"
 
 // 给你一棵所有节点为非负值的二叉搜索树，请你计算树中任意两节点的差的绝对值的最小值。
 
 // https://leetcode-cn.com/problems/minimum-absolute-difference-in-bst/
 
 // 条件: 树中至少有 2 个节点。
-func getMinimumDifference(root *TreeNode) int {
+func getMinimumDifference(root *binary.TreeNode) int {
 
 	// 中序遍历, 迭代
-	stack := []*TreeNode{}
+	stack := []*binary.TreeNode{}
 	var diff = 1 << 63 -1
 	var preNum = -1
 	for len(stack) > 0 || root != nil {
@@ -33,12 +34,12 @@ func getMinimumDifference(root *TreeNode) int {
 
 
 // 中序遍历, 递归
-func getMinimumDifference1(root *TreeNode) int {
+func getMinimumDifference1(root *binary.TreeNode) int {
 
 	var diff = 1 << 63 -1
 	var preNum = -1
-	var dfs func(node *TreeNode)
-	dfs = func(node *TreeNode) {
+	var dfs func(node *binary.TreeNode)
+	dfs = func(node *binary.TreeNode) {
 		if node == nil {
 			return
 		}

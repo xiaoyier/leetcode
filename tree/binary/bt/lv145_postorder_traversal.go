@@ -1,14 +1,16 @@
-package binary
+package bt
+
+import "leetcode/tree/binary"
 
 // 给定一个二叉树，返回它的 后序 遍历。
 
 // https://leetcode-cn.com/problems/binary-tree-postorder-traversal/
 
 // 迭代
-func postorderTraversal(root *TreeNode) []int {
-	stack := []*TreeNode{}
+func postorderTraversal(root *binary.TreeNode) []int {
+	stack := []*binary.TreeNode{}
 	result := []int{}
-	var preNode *TreeNode
+	var preNode *binary.TreeNode
 	for len(stack) > 0 || root != nil {
 		for root != nil {
 			stack = append(stack, root)
@@ -30,10 +32,10 @@ func postorderTraversal(root *TreeNode) []int {
 }
 
 // 递归
-func postorderTraversal1(root *TreeNode) []int {
+func postorderTraversal1(root *binary.TreeNode) []int {
 	result := []int{}
-	var dfs func(node *TreeNode)
-	dfs = func(node *TreeNode) {
+	var dfs func(node *binary.TreeNode)
+	dfs = func(node *binary.TreeNode) {
 		if node == nil {
 			return
 		}

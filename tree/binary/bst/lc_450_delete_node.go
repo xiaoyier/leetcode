@@ -1,4 +1,6 @@
-package binary
+package bst
+
+import "leetcode/tree/binary"
 
 // 给定一个二叉搜索树的根节点 root 和一个值 key，删除二叉搜索树中的 key 对应的节点，并保证二叉搜索树的性质不变。返回二叉搜索树（有可能被更新）的根节点的引用。
 
@@ -10,7 +12,7 @@ package binary
 
 // https://leetcode-cn.com/problems/delete-node-in-a-bst/
 
-func deleteNode(root *TreeNode, key int) *TreeNode {
+func deleteNode(root *binary.TreeNode, key int) *binary.TreeNode {
 
 	deleteNode, parent := findNode(root, key)
 	if deleteNode == nil {
@@ -42,7 +44,7 @@ func deleteNode(root *TreeNode, key int) *TreeNode {
 }
 
 // O(logn) 即 O(h)
-func findNode(root *TreeNode, key int) (node *TreeNode, parent *TreeNode) {
+func findNode(root *binary.TreeNode, key int) (node *binary.TreeNode, parent *binary.TreeNode) {
 	node = root
 	for node != nil {
 		if node.Val == key {
@@ -59,7 +61,7 @@ func findNode(root *TreeNode, key int) (node *TreeNode, parent *TreeNode) {
 }
 
 
-func successor(node *TreeNode) (*TreeNode, *TreeNode) {
+func successor(node *binary.TreeNode) (*binary.TreeNode, *binary.TreeNode) {
 	if node == nil || node.Right == nil {
 		return nil, nil
 	}

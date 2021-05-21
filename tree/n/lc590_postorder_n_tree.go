@@ -1,4 +1,4 @@
-package binary
+package n
 
 // 给定一个 N 叉树，返回其节点值的 后序遍历 。
 //

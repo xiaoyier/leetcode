@@ -1,5 +1,6 @@
-package binary
+package bst
 
+import "leetcode/tree/binary"
 
 // 给定二叉搜索树（BST）的根节点和要插入树中的值，将值插入二叉搜索树。 返回插入后二叉搜索树的根节点。 输入数据 保证 ，新值和原始二叉搜索树中的任意节点值都不同。
 
@@ -8,14 +9,14 @@ package binary
 // https://leetcode-cn.com/problems/insert-into-a-binary-search-tree/
 
 
-func insertIntoBST(root *TreeNode, val int) *TreeNode {
+func insertIntoBST(root *binary.TreeNode, val int) *binary.TreeNode {
 
 	if root == nil {
-		return &TreeNode{Val: val}
+		return &binary.TreeNode{Val: val}
 	}
 
 	origin := root
-	var parent *TreeNode
+	var parent *binary.TreeNode
 	for root != nil {
 		if root.Val == val {
 			return origin
@@ -31,9 +32,9 @@ func insertIntoBST(root *TreeNode, val int) *TreeNode {
 
 	if parent != nil {
 		if val > parent.Val {
-			parent.Right = &TreeNode{Val: val}
+			parent.Right = &binary.TreeNode{Val: val}
 		} else {
-			parent.Left = &TreeNode{Val: val}
+			parent.Left = &binary.TreeNode{Val: val}
 		}
 	}
 	return origin

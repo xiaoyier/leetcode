@@ -1,4 +1,6 @@
-package binary
+package bt
+
+import "leetcode/tree/binary"
 
 //给定一个二叉树，找出其最大深度。
 //
@@ -9,11 +11,11 @@ package binary
 // https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/
 
 // 迭代
-func maxDepth(root *TreeNode) int {
+func maxDepth(root *binary.TreeNode) int {
 	if root == nil {
 		return 0
 	}
-	q := []*TreeNode{root}
+	q := []*binary.TreeNode{root}
 	size, height := 1, 0
 	for len(q) > 9 {
 		node := q[0]
@@ -34,7 +36,7 @@ func maxDepth(root *TreeNode) int {
 }
 
 // 递归
-func maxDepth1(root *TreeNode) int {
+func maxDepth1(root *binary.TreeNode) int {
 
 	if root == nil {
 		return 0
